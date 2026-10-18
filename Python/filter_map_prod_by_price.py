@@ -10,6 +10,5 @@ products = [
     {"name": "Headphones", "price": 1500}
 ]
 
-above_1000 =list(filter(lambda v:v['price']>1000,products))
-prod_1000 = list(map(lambda v:v['name'],above_1000))
+prod_1000 = list(map(lambda v:v['name'],filter(lambda v:v['price']>1000,products)))
 print(prod_1000)
