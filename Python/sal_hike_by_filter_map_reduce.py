@@ -9,20 +9,22 @@ print("-"*80)
 sal_500 = list(filter(lambda v:v<501,sallst))
 sal_1000 = list(filter(lambda v:500<v<1001,sallst))
 
-print(sal_1000)
-print(sal_500)
+print("Salaries btw 500-1000:",sal_1000)
+print("Salaries btw 0-500:   ",sal_500)
 
-hike_500 = list(map(lambda v:v+v*0.1,sal_500))
-hike_1000 = list(map(lambda v:v+v*0.2,sal_1000))
+hike_500 = list(map(lambda v:v*1.1,sal_500))
+hike_1000 = list(map(lambda v:v*1.2,sal_1000))
 
-print(hike_1000)
-print(hike_500)
+print("Hiked Sal btw 500-1000:",hike_1000)
+print("Hiked Sal btw 0-500:    ",hike_500)
 
 total_500 = functools.reduce(lambda x,y:x+y,hike_500)
 total_1000= functools.reduce(lambda x,y:x+y,hike_1000)
 
 # Printing the results
 print("-"*50)
+print("Btw 0-500:")
+print("\tOld_Salary\tHiked_salary")
 for s,h in zip(sal_500,hike_500):
     print("\t{}\t\t{}".format(s,h))
 print("-"*50)
@@ -30,6 +32,8 @@ print("\tTotal Salary:\t",total_500)
 
 print("-"*50)
 print("-"*50)
+print("Btw 500-1000:")
+print("\tOld_Salary\tHiked_salary")
 for s,h in zip(sal_1000,hike_1000):
     print("\t{}\t\t{}".format(s,h))
 print("-"*50)
